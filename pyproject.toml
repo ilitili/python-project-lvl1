@@ -9,6 +9,7 @@ authors = ["ilitili <momcoveylebozo@gmail.com>"]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
+[tool.poetry]
 packages = [
   { include = "brain_games" },
 ]
