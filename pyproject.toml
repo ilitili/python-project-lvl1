@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["ilitili <momcoveylebozo@gmail.com>"]
 packages = [
-    { include = "brain-games" }
+    { include = "brain_games" }
 ]
 
 [tool.poetry.dependencies]
