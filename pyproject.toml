@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["ilitili <momcoveylebozo@gmail.com>"]
 packages = [
-    { include = "hexlet-code" }
+    { include = "scripts" }
 ]
 
 [tool.poetry.dependencies]
