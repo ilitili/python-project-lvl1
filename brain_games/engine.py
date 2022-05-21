@@ -26,4 +26,4 @@ def run_game(game):
             print("Let's try again, {}!".format(user_name))
             return
         print('Correct!')
-    print('Congratulations, {}'.format(user_name))
+    print('/Congratulations, {}!/'.format(user_name))
