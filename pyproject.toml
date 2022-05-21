@@ -3,6 +3,13 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["ilitili <momcoveylebozo@gmail.com>"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "Topic :: Education",
+]
+repository = "https://github.com/ilitili/python-project-lvl1"
 packages = [
     { include = "brain_games" }
 ]
