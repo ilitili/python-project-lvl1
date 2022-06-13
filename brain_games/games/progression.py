@@ -11,7 +11,7 @@ STEP_MAX = 10
 PROGERSSION_LENGTH = 10
 
 
-def get_challenge():
+def progression():
     """Progression game Q&A generation.
 
     It forms an arithmetic progression,
