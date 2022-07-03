@@ -1,32 +1,42 @@
-"""Progression game engine."""
-
 import random
 
 GAME_DESCRIPTION = 'What number is missing in the progression?'
 
-START_MIN = 1
-START_MAX = 20
-STEP_MIN = 1
-STEP_MAX = 10
-PROGERSSION_LENGTH = 10
+
+def make_progression(first_num, diff, length):
+    """Return arithmetic progression.
+    Parameters:
+        first_num(int): first mumber of progression
+        diff(int): differense of the progression
+        length(int): quantity on numbers of progression
+    Returns:
+        progression(list): arithmetic progression, every element is str type
+    """
+    progression = []
+    for _i in range(length):
+        progression.append(str(first_num))
+        first_num += diff
+    return progression
 
 
 def get_challenge():
-    """Progression game Q&A generation.
-
-    It forms an arithmetic progression,
-    replacing one of the numbers with two points.
-
+    """Return question and answer for the game 'progression'.
+    Function generate an arithmetic progression with random length
+    in range from 5 to 10 numbers, random first number in range from 1 to 100,
+    and random differense of progression. Question for player is a generated
+    progression with one hidden number.
     Returns:
-        question{str} : arithmetic progression;
-        answer{str} : hidden number
+        question(str): arithmetic progression with one hidden number
+        answer(str): hidden number of progression from question
     """
-    start = random.randint(START_MIN, START_MAX)
-    step = random.randint(STEP_MIN, STEP_MAX)
-    progression = [(start + (ind * step))
-                   for ind in range(PROGERSSION_LENGTH)]
-    hidden_element_index = random.randint(0, PROGERSSION_LENGTH - 1)
-    answer = str(progression[hidden_element_index])
-    progression[hidden_element_index] = '..'
-    question = ' '.join(str(ind) for ind in progression)
-    return (question, answer)
+    # create progression (list with str type numbers):
+    first_num = random.randint(1, 99)
+    length = random.randint(5, 10)
+    diff = random.randint(1, 9)
+    progression = make_progression(first_num, diff, length)
+    # create progression with hidden number (str):
+    hidden_index = random.randint(0, len(progression) - 1)
+    answer = progression.pop(hidden_index)
+    progression.insert(hidden_index, '..')
+    question = ' '.join(progression)
+    return question, answer
