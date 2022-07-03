@@ -2,22 +2,19 @@
 
 import random
 
-GAME_DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'."
-
-MIN_NUM = 1
-MAX_NUM = 20
+GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def get_challenge():
-    """Even game Q&A generation.
-
-    generate random Number and check if a Number is Even
-
+    """Return question and answer for the game 'even'.
     Returns:
-        question{str} : Number;
-        answer{str} : Even status
+        question(str): random number in range from 1 to 100
+        answer(str): 'yes' - number is prime, 'no' - number is not prime.
     """
-    num = random.randint(MIN_NUM, MAX_NUM)
-    answer = 'no' if num % 2 else 'yes'
-    question = '{}'.format(num)
-    return (question, answer)
+    random_number = random.randint(1, 100)
+    question = str(random_number)
+    if random_number % 2 == 0:
+        answer = 'yes'
+    else:
+        answer = 'no'
+    return question, answer
